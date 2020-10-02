@@ -1,5 +1,5 @@
 # Miniatures
-Miniature library for Spigot/PaperMC (Anything based on Bukkit API)-
+Miniature library for Spigot(or anything based on SpigotAPI - PaperMC, SSSpigot).
 
 ### What is miniature?
 Miniature is a world area that is instead of blocks, represented on heads of armorstands.
