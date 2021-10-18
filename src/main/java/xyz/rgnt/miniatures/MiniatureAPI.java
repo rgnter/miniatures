@@ -18,7 +18,10 @@ public class MiniatureAPI {
      * @param small    Whether miniature is small or not
      * @return Miniature.Builder
      */
-    public static @NotNull Miniature.Builder areaToMiniature(@NotNull World world, @NotNull Vector mostPos, @NotNull Vector leastPos, boolean small) {
+    public static @NotNull Miniature.Builder areaToMiniature(@NotNull World world,
+                                                             @NotNull Vector mostPos,
+                                                             @NotNull Vector leastPos,
+                                                             boolean small) {
         Miniature.Builder miniature = Miniature.Builder.create(new Vector(
                 mostPos.getBlockX() - leastPos.getBlockX(),
                 mostPos.getBlockY() - leastPos.getBlockY(),
@@ -35,5 +38,13 @@ public class MiniatureAPI {
             }
         }
         return miniature;
+    }
+
+
+    /**
+     * @return New Miniature builder
+     */
+    public static @NotNull Miniature.Builder miniatureBuilder() {
+        return new Miniature.Builder();
     }
 }

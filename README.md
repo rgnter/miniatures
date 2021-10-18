@@ -35,16 +35,26 @@ built.getPositions().forEach((index, part) -> {
 Repository:
 ```xml
 <repository>
-    <id>karyon</id>
-    <url>http://nexus.realmland.eu/repository/karyon/</url>
+    <id>nexus@ethernal</id>
+    <url>https://nexus.ethernal.cz/repository/maven/</url>
 </repository>
 ```
 Dependency:
 ```xml
+<!-- Source -->
 <dependency>
-  <groupId>xyz.rgnt</groupId>
-  <artifactId>miniatures</artifactId>
-  <version>1.0-alpha</version>
+    <groupId>xyz.rgnt</groupId>
+    <artifactId>miniatures</artifactId>
+    <version>1.0-release</version>
+</dependency>
+
+<!-- JavaDocs -->
+<dependency>
+<groupId>xyz.rgnt</groupId>
+    <artifactId>miniatures</artifactId>
+    <version>1.0-release</version>
+    <classifier>javadoc</classifier>
+    <scope>provided</scope>
 </dependency>
 ```
 

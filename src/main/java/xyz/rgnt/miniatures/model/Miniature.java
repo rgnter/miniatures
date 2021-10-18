@@ -12,7 +12,7 @@ import java.util.Map;
 public class Miniature {
 
     @Getter @NotNull
-    private final Map<Integer, Part> positions = new HashMap<>();
+    private final Map<Integer, Part> parts = new HashMap<>();
 
     @Getter @NotNull
     private Vector dimensions = new Vector(0d, 0d, 0d);
@@ -32,7 +32,8 @@ public class Miniature {
         @Getter @Setter
         private @NotNull Vector relPos;
         @Getter @Setter
-        private @NotNull Vector offset = new Vector();
+        private @NotNull Vector offset
+                = new Vector();
 
         @Getter @Setter
         private float yaw = 0f;
@@ -42,7 +43,10 @@ public class Miniature {
         @Getter @Setter
         private @NotNull boolean small;
 
-        public Part(@NotNull Material material, @NotNull Vector relPos, float yaw, float pitch, boolean small) {
+        public Part(@NotNull Material material,
+                    @NotNull Vector relPos,
+                    float yaw, float pitch,
+                    boolean small) {
             this.material = material;
             this.relPos = relPos;
             this.yaw = yaw;
@@ -50,7 +54,9 @@ public class Miniature {
             this.small = small;
         }
 
-        public Part(@NotNull Material material, @NotNull Vector relPos, boolean small) {
+        public Part(@NotNull Material material,
+                    @NotNull Vector relPos,
+                    boolean small) {
             this.material = material;
             this.relPos = relPos;
             this.small = small;
@@ -95,14 +101,14 @@ public class Miniature {
 
         /**
          * Adds part
-         * @param material Material of block
-         * @param pos      Relative position of block
-         * @param yaw      Yaw rotation of a part
-         * @param pitch    Pitch rotation of a part
+         * @param material Material
+         * @param pos      Relative position (Model position)
+         * @param yaw      Yaw rotation
+         * @param pitch    Pitch rotation
          * @return Builder
          */
         public @NotNull Builder addPart(@NotNull Material material, @NotNull Vector pos, float yaw, float pitch, boolean small) {
-            this.miniature.positions.put(lastIndex++, new Part(
+            this.miniature.parts.put(lastIndex++, new Part(
                     material,
                     pos,
                     yaw,
@@ -113,8 +119,8 @@ public class Miniature {
 
         /**
          * Adds part
-         * @param material Material of Block
-         * @param pos      World position of Block
+         * @param material Material
+         * @param pos      Relative position (Model position)
          * @return Builder
          */
         public @NotNull Builder addPart(@NotNull Material material, @NotNull Vector pos, boolean small) {
